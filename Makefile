@@ -1,4 +1,4 @@
-FILES = main.c test.c bonjour.cpp
+FILES = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memset.c ft_strlen.c
 
 # Cree les fichiers ".o" correspondants aux fichiers ".c" 
 # build/main.o build/test.o build/bonjour.o
