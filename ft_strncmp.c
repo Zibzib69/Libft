@@ -26,10 +26,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	if (i == n)
-        return (0);
+		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-
 
 // #include <string.h>
 
@@ -39,4 +38,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // 	printf("%d\n", ft_strncmp("abcx", "abcy", 3));
 // 	return(0);
 // }
-
