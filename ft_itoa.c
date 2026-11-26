@@ -14,12 +14,12 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-size_t	int_len(int nb)
+static size_t	int_len(int nb)
 {
 	int	i;
 
-	if(nb == 0)
-		return(1);
+	if (nb == 0)
+		return (1);
 	i = 0;
 	if (nb < 0)
 		i = 1;
