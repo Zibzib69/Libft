@@ -25,15 +25,12 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
+// #include <stdio.h>
+// #include <string.h>
 
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	printf ("%s\n", ft_strchr("Bonjour les amis", 'n'));
-	printf ("%s\n", strchr("Bonjour les amis", 'n'));
-	return(0);
-}
-*/
+// int	main(void)
+// {
+// 	printf ("%s\n", ft_strchr("Bonjour les amis", 'n'));
+// 	printf ("%s\n", strchr("Bonjour les amis", 'n'));
+// 	return(0);
+// }

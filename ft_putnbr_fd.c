@@ -28,8 +28,8 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd((nd % 10 + 48), fd);
 }
 
-int	main(void)
-{
-	ft_putnbr_fd(20, 1);
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_putnbr_fd(20, 1);
+// 	return (0);
+// }

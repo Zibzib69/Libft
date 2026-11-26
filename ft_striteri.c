@@ -12,9 +12,25 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
 
-int	main(void)
-{
-	return (0);
-}
+// void	test(unsigned int i, char *s)
+// {
+// 	s[i] = s[i] + 1;
+// }
+// 
+// int	main(void)
+// {
+// 	char str[] = "abc";
+// 	ft_striteri(str, test);
+// 	__builtin_printf("%s", str);
+// 	return (0);
+// }

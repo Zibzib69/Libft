@@ -21,7 +21,8 @@ int	ft_atoi(const char *n)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (n[i] == '	' || n[i] == ' ')
+	while (n[i] == ' ' || n[i] == '\t' || n[i] == '\f' || n[i] == '\n'
+		|| n[i] == '\r' || n[i] == '\v')
 		i++;
 	if (n[i] == '-' || n[i] == '+')
 	{
@@ -36,8 +37,6 @@ int	ft_atoi(const char *n)
 			result *= 10;
 		i++;
 	}
-	if ((result * sign) > 2147483647 || (result * sign) < -2147483647)
-		return (0);
 	return (result * sign);
 }
 
@@ -45,7 +44,7 @@ int	ft_atoi(const char *n)
 
 // int	main(void)
 // {
-// 	__builtin_printf("%d\n", atoi("2147483648"));
-// 	__builtin_printf("%d\n", ft_atoi("2147483648"));
+// 	__builtin_printf("%d\n", atoi("-2147483648"));
+// 	__builtin_printf("%d\n", ft_atoi("-2147483648"));
 // 	return (0);
 // }

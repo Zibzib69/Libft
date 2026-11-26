@@ -21,7 +21,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	i = 0;
 	if (nmemb == 0 || size == 0)
-		return (NULL);
+		return (malloc(0));
 	if (nmemb >= SIZE_MAX / size)
 		return (NULL);
 	str = malloc(sizeof(size_t) * (size * nmemb));
