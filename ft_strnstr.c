@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -19,27 +18,27 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (little == 0)
+	if (little[0] == '\0')
 		return ((char *)big);
-	while (big[i] && i <= len)
+	while (i < len && big[i])
 	{
 		j = 0;
-		while (little[j] == big[i])
-		{
-			if (little[j + 1] == '\0')
-				return ((char *)&big[i - j]);
-			i++;
+		while (little[j] && i + j < len && little[j] == big[i + j])
 			j++;
-		}
+		if (little[j] == '\0')
+			return ((char *)&big[i]);
 		i++;
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	__builtin_printf("%s\n", (char *)ft_strnstr("abbbbbbABC", "", 10));
-	__builtin_printf("%s\n", (char *)strnstr("abbbbbbABC", "", 10));
-	return (0);
-}
-*/
+
+// int	main(void)
+// {
+// 	__builtin_printf("%s\n", (char *)ft_strnstr("abcde", "xyz", 5));
+// 	__builtin_printf("%s\n", (char *)strnstr("bacccababcaabbbbba", "bbc", 11));
+// 	//__builtin_printf("void test %s\n", (char *)ft_strnstr("", "", 1000));
+// 	//__builtin_printf("null %s\n", (char *)ft_strnstr(str, "", 1000));
+// 	//__builtin_printf("%s\n", (char *)ft_strnstr("safdsaf", str, 1000));
+// 	//__builtin_printf("%s\n", (char *)ft_strnstr(str, "abcd", 1));
+// 	return (0);
+// }

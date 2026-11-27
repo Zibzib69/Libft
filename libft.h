@@ -50,6 +50,7 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*ft_strtrim(char const *s1, char const *set);
 typedef struct s_list
 {
 	void			*content;

@@ -9,30 +9,28 @@
 /*   Updated: 2026/11/20 11:03:47 by sqadwimi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
-	int		len;
+	size_t	len;
+	size_t	src_len;
 
 	len = 0;
-	if (!dest || !src || size < 0)
-		return (len + ft_strlen(src));
-	len = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	while (len < size && dest[len])
+		len++;
+	if (len == size)
+		return (size + src_len);
 	i = 0;
-	size -= len;
-	while (src[i] && size > 1)
+	while (src[i] && i < size - len - 1)
 	{
-		size--;
 		dest[len + i] = src[i];
 		i++;
 	}
-	if (size > 0)
-		dest[len + i] = '\0';
-	return (len + ft_strlen(src));
+	dest[len + i] = '\0';
+	return (len + src_len);
 }
 
 /*
